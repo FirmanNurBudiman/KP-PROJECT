@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;  
 const express = require('express');
 const usersRoutes = require('./routes/users');
 const middlewareLogRequest = require('./middleware/logs');
@@ -15,6 +15,7 @@ const adminModel = require('./models/admins');
 const foodModel = require('./models/foods');
 const orderModel = require('./models/orders');
 const tamuModel = require('./models/tamu');
+const complaintsModel = require('./models/complaints');
 const cityModel = require('./models/cities');
 const provinceModel = require('./models/provincies');
 const commentModel = require('./models/comments');
@@ -1301,3 +1302,76 @@ app.put('/updateTamu', async (req, res, next) => {
 
 
 
+// COMPLAINTS Septian Farhan
+
+app.get('/complaints', async (req, res, next) => {
+    try {
+
+        const [complaints] = await complaintsModel.getAllComplaints();
+        res.status(201).json({
+            status: 200,
+            message: 'Berhasil Mengambil Semua Data Keluhan',
+            complaints: complaints
+        });
+    } catch (error) {
+        next(error);
+    }
+});
+
+app.post('/createComplaints', async (req, res, next) => {
+    try {
+        const complaintsData = {
+            id: req.body.id,
+            name: req.body.name,
+            tenant: req.body.tenant,
+            phone: req.body.phone,
+            isikeluhan: req.body.isikeluhan
+
+        };
+        await complaintsModel.createComplaints(complaintsData);
+        res.status(201).json({ 
+            status: 200,
+            message: 'Berhasil menambahkan keluhan'
+         });
+    } catch (error) {
+        next(error); 
+    }
+});
+
+app.delete('/deleteComplaints', async (req, res, next) => {
+    try {
+        const id = req.body.id;
+        await complaintsModel.deleteComplaints(id);
+        res.status(201).json({ 
+            status: 200,
+            message: 'Berhasil Menghapus Data Keluhan'
+         });
+    } catch (error) {
+        next(error); 
+    }
+});
+
+app.put('/updateComplaints', async (req, res, next) => {
+    try {
+        const complaintsData = {
+            id: req.body.id,
+            name: req.body.name,
+            tenant: req.body.tenant,
+            phone: req.body.phone,
+            isikeluhan: req.body.isikeluhan
+        };
+
+        const [result] = await complaintsModel.updateComplaints(complaintsData);
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ message: 'Keluhan tidak ditemukan' });
+        }
+
+        res.status(200).json({
+            status: 200,
+            message: 'Data keluhan berhasil diperbarui'
+        });
+    } catch (error) {
+        next(error);
+    }
+});
