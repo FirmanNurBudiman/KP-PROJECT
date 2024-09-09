@@ -75,6 +75,14 @@ const updateTamu = (tamuData) => {
     return dbPool.execute(SQLQuery);
 }
 
+const updateComplain = (tamuData) => {
+    const SQLQuery = `  UPDATE guest 
+                        SET nama='${tamuData.nama}', telepon='${tamuData.telepon}', keperluan='${tamuData.keperluan}', tujuan='${tamuData.dituju}'
+                        WHERE id=${tamuData.id}`;
+
+    return dbPool.execute(SQLQuery);
+}
+
 module.exports = {
     getAllTamu,
     createTamu,
