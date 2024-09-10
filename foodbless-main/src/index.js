@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;  
 const express = require('express');
 const usersRoutes = require('./routes/users');
 const middlewareLogRequest = require('./middleware/logs');
@@ -11,10 +11,12 @@ const upload = require('./middleware/multer');
 const customerModel = require('./models/customers');
 const userModel = require('./models/users');
 // const sellerModel = require('./models/sellers');
+const BookingsModel = require('./models/booking');
 const adminModel = require('./models/admins');
 const foodModel = require('./models/foods');
 const orderModel = require('./models/orders');
 const tamuModel = require('./models/tamu');
+const complaintsModel = require('./models/complaints');
 const cityModel = require('./models/cities');
 const provinceModel = require('./models/provincies');
 const commentModel = require('./models/comments');
@@ -1301,3 +1303,153 @@ app.put('/updateTamu', async (req, res, next) => {
 
 
 
+// COMPLAINTS Septian Farhan
+
+app.get('/complaints', async (req, res, next) => {
+    try {
+
+        const [complaints] = await complaintsModel.getAllComplaints();
+        res.status(201).json({
+            status: 200,
+            message: 'Berhasil Mengambil Semua Data Keluhan',
+            complaints: complaints
+        });
+    } catch (error) {
+        next(error);
+    }
+});
+
+app.post('/createComplaints', async (req, res, next) => {
+    try {
+        const complaintsData = {
+            id: req.body.id,
+            name: req.body.name,
+            tenant: req.body.tenant,
+            phone: req.body.phone,
+            isikeluhan: req.body.isikeluhan
+
+        };
+        await complaintsModel.createComplaints(complaintsData);
+        res.status(201).json({ 
+            status: 200,
+            message: 'Berhasil menambahkan keluhan'
+         });
+    } catch (error) {
+        next(error); 
+    }
+});
+
+app.delete('/deleteComplaints', async (req, res, next) => {
+    try {
+        const id = req.body.id;
+        await complaintsModel.deleteComplaints(id);
+        res.status(201).json({ 
+            status: 200,
+            message: 'Berhasil Menghapus Data Keluhan'
+         });
+    } catch (error) {
+        next(error); 
+    }
+});
+
+app.put('/updateComplaints', async (req, res, next) => {
+    try {
+        const complaintsData = {
+            id: req.body.id,
+            name: req.body.name,
+            tenant: req.body.tenant,
+            phone: req.body.phone,
+            isikeluhan: req.body.isikeluhan
+        };
+
+        const [result] = await complaintsModel.updateComplaints(complaintsData);
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ message: 'Keluhan tidak ditemukan' });
+        }
+
+        res.status(200).json({
+            status: 200,
+            message: 'Data keluhan berhasil diperbarui'
+        });
+    } catch (error) {
+        next(error);
+    }
+});
+
+
+//Booking Rizki Rendy
+app.get('/booking', async (req, res, next) => {
+    try {
+
+        const [booking] = await complaintsModel.getAllComplaints();
+        res.status(201).json({
+            status: 200,
+            message: 'Berhasil Mengambil Semua Data Penyewaan',
+            booking: booking
+        });
+    } catch (error) {
+        next(error);
+    }
+});
+
+app.post('/createBooking', async (req, res, next) => {
+    try {
+        const BookingData = {
+            Nama_Lengkap : req.body.fullname,
+            Jenis_Kelamin : req.body.gender,
+            Email : req.body.email,
+            No_Hp : req.body.phonenumber,
+            ID_Ruangan : req.body.typeruangan,
+            Durasi : req.body.duration,
+        };
+        await BookingsModel.createBooking(BookingData);
+        res.status(201).json({ 
+            status: 200,
+            message: 'Berhasil menambahkan Pesanan!'
+         });
+    } catch (error) {
+        next(error); 
+    }
+});
+
+app.delete('/deleteBooking', async (req, res, next) => {
+    try {
+        const ID_User = req.body.id;
+        await BookingsModel.deleteBooking(ID_User);
+        res.status(201).json({ 
+            status: 200,
+            message: 'Berhasil Menghapus Data pesanan'
+         });
+    } catch (error) {
+        next(error); 
+    }
+});
+
+app.put('/updateBooking', async (req, res, next) => {
+    try {
+        const BookingData = {
+            Nama_Lengkap : req.body.fullname,
+            Jenis_Kelamin : req.body.gender,
+            Email : req.body.email,
+            No_Hp : req.body.phonenumber,
+            ID_Ruangan : req.body.typeruangan,
+            Durasi : req.body.duration,
+            ID_Pemesanan : req.body.ID_Pemesanan,
+            ID_User : req.body.ID_User
+        };
+
+        const [result] = await BookingsModel.updateBooking(BookingData);
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ message: 'Pesanan tidak ditemukan' });
+        }
+
+        res.status(200).json({
+            status: 200,
+            message: 'Data Pesanan berhasil diperbarui'
+        });
+    } catch (error) {
+        next(error);
+    }
+});
