@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sewa Ruangan - Virtual Office Rental</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Virtual<span>Office</span>.</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#sewa">Sewa Ruangan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#menu">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">Tentang Kami</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="sewa-ruangan" class="container mt-5">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Sewa Ruangan</h2>
+          <form action="/submit-form" method="POST">
+          <div class="personal-information">
+            <h5>Personal Information</h5>
+
+            <div class="form-floating mb-3">
+              <input type="text" name="fullname" class="form-control" id="floatingtext" placeholder="Name" required>
+              <label for="floatingtext">Full Name</label>
+            </div>
+
+            <div class="form-checkbox">
+              <h5>Pilih Gender:</h5>
+              <div class="form-check form-check-flex mb-3">
+                <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Laki" required>
+                <label class="form-check-label" for="inlineRadio1">Laki-Laki</label>
+              </div>
+              <div class="form-check form-check-flex mb-3">
+                <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Perempuan" required>
+                <label class="form-check-label" for="inlineRadio1">Perempuan</label>
+              </div>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="email" name="email" class="form-control" id="floatingemail" placeholder="youremail@gmail.com" required>
+              <label for="floatingemail">Email</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="tel" name ="phonenumber" class="form-control" id="floatingphone" placeholder="Phone Number" pattern="+62-[0-9]{4}-[0-9]{4}-[0-9]{4}" required>
+              <label for="floatingphone">Phone Number</label>
+              <small class="form-text text-muted">Format: +62-XXXX-XXXX-XXXX</small>
+            </div>
+          </div>
+
+          <div class="product-information">
+            <h5>Product Information</h5>
+            <div class="form-floating mb-3">
+              <select class="form-select" name="typeruangan" id="floatingselect" placeholder="Type Virtual Office" required>
+                <option selected></option>
+                <option value="1">Type 1</option>
+                <option value="2">Type 2</option>
+                <option value="3">Type 3</option>
+                <option value="4">Type 4</option>
+              </select>
+              <label for="floatingselect">Pilih Type Virtual Office</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <select class="form-select" name="duration" id="floatingduration" placeholder="Durasi Virtual Office" required>
+                <option selected></option>
+                <option value="1 bulan">1 Bulan</option>
+                <option value="12 bulan">12 Bulan</option>
+                <option value="24 bulan">24 Bulan</option>
+              </select>
+              <label for="floatingduration">Pilih Durasi Penyewaan</label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" value="booking">Submit</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white py-4">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Contact Us</h5>
+            <p>22 Jl Baros 40533 Cimahi Selatan West Java</p>
+            <p>Email: technopark@cimahikota.go.id</p>
+            <p>Phone: +1 234 567 890</p>
+          </div>
+          <div class="col-md-4">
+            <h5>About Us</h5>
+            <p class="justified">
+              Gedung BITC merupakan gedung perkantoran yang dibangun oleh
+              Pemerintah Kota Cimahi pada tahun 2007 sampai 2009 dan mulai
+              beroperasi pada tahun 2010 sebagai pusat kegiatan kreatifitas dan
+              pelayanan para pelaku bisnis pemula berbasis teknologi berskala
+              nasional maupun internasional.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Follow Us</h5>
+            <div class="social-icons">
+              <a
+                href="https://web.facebook.com/technopark.cimahi/"
+                class="text-white d-flex align-items-center mb-2"
+              >
+                <i data-feather="facebook" class="me-2"></i> Facebook
+              </a>
+              <a href="" class="text-white d-flex align-items-center mb-2">
+                <i data-feather="twitter" class="me-2"></i> Twitter
+              </a>
+              <a
+                href="https://www.instagram.com/bitc.workingspace/"
+                class="text-white d-flex align-items-center mb-2"
+              >
+                <i data-feather="instagram" class="me-2"></i> Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-3">
+          <p class="mb-0">
+            &copy; 2024 BITC Virtual Office. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  </body>
+</html>
