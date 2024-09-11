@@ -25,7 +25,6 @@ const getComplaintsById = async (id) => {
 
 const createComplaints = async (body) => {
     const {
-        id,
         name,
         tenant,
         phone,
@@ -34,18 +33,19 @@ const createComplaints = async (body) => {
 
     const createAt = moment().tz('Asia/Jakarta').format('YYYY-MM-DD HH:mm:ss');
 
-    const SQLQuery = `INSERT INTO keluhan (id, name, tenant, phone, isikeluhan, createAt) 
-                      VALUES (?, ?, ?, ?, ?, ?)`;
-    const values = [
-        id || null,
-        name || null,
-        tenant || null,
-        phone || null,
-        isikeluhan || null,
-        createAt
-    ];
+    const SQLQuery = `INSERT INTO keluhan (name, tenant, phone, isikeluhan, createAt) 
+                      VALUES (?, ?, ?, ?, ?)`;
+    
+    const values = [name, tenant, phone, isikeluhan, createAt];
 
-    return dbPool.execute(SQLQuery, values);
+    try{
+        console.log("Executing query:", SQLQuery);
+        console.log("Values:", values);
+        return dbPool.execute(SQLQuery, values)
+    } catch (error) {
+        console.error("Error executing query:", error);
+        throw error;
+    }
 };
 
 const deleteComplaints = async (id) => {
