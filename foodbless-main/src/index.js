@@ -1322,12 +1322,10 @@ app.get('/complaints', async (req, res, next) => {
 app.post('/createComplaints', async (req, res, next) => {
     try {
         const complaintsData = {
-            id: req.body.id,
             name: req.body.name,
             tenant: req.body.tenant,
             phone: req.body.phone,
-            isikeluhan: req.body.isikeluhan
-
+            isikeluhan: req.body.message,
         };
         await complaintsModel.createComplaints(complaintsData);
         res.status(201).json({ 
