@@ -51,11 +51,6 @@ module.exports = {
       chunks: ['app'],
     }),
     new HtmlWebpackPlugin({
-      filename: 'skm.html',
-      template: path.resolve(__dirname, 'src/templates/skm.html'),
-      chunks: ['app'],
-    }),
-    new HtmlWebpackPlugin({
       filename: 'sewa.html',
       template: path.resolve(__dirname, 'src/templates/sewa.html'),
       chunks: ['app'],

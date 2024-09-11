@@ -1,8 +1,9 @@
 import 'regenerator-runtime';
-import $ from 'jquery';
-
-// CSS
+import '../scripts/index.js';
 import '../styles/style.css';
+import '../scripts/components/contact-section';
+
+console.log('Index.js is successfully loaded');
 
 // Toggle Nav
 const navbarDrawerElement = document.querySelector('#navigationDrawerId');
