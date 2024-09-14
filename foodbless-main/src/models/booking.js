@@ -13,11 +13,11 @@ const getAllBooking = () => {
 };
 
 const getBookingById = async (id) => {
-    const SQLQuery = 'SELECT * FROM pemesanan WHERE ID_user = ?';
+    const SQLQuery = 'SELECT * FROM pemesanan WHERE ID_Pemesanan = ?';
     const [rows] = await dbPool.execute(SQLQuery, [id]);
 
     if (rows.length === 0) {
-        throw new Error('Data keluhan tidak ditemukan');
+        throw new Error('Data Pesanan tidak ditemukan');
     }
 
     return rows[0];
@@ -62,8 +62,7 @@ const createBooking = async (body) => {
 
 
 const deleteBooking = async (id) => {
-    // Query untuk menghapus data berdasarkan ID_User
-    const SQLQuery = `DELETE FROM pemesanan WHERE ID_User = ?`;
+    const SQLQuery = 'DELETE FROM pemesanan WHERE ID_Pemesanan = ?';
     const [result] = await dbPool.execute(SQLQuery, [id]);
 
     // Cek apakah ada baris yang dihapus
@@ -86,7 +85,6 @@ const updateBooking = (BookingData) => {
 
     return dbPool.execute(SQLQuerypemesanan);
 }
-
 
 
 module.exports = {

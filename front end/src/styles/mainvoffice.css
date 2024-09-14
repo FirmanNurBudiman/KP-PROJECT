@@ -1,0 +1,281 @@
+.custom-padding{
+  padding-left: 4.5rem;
+}
+
+.content-box{
+  background-color: white;
+  border-radius:8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  padding: 20px;
+}
+
+.content-box p{
+  text-align: justify;
+}
+
+.outside-box {
+  margin-top: -20px;
+  margin-left: -150px;
+}
+
+@media (max-width: 768px) {
+  .content-box{
+    margin-left: -135px;
+  }
+
+  .outside-box {
+    margin-left: -150px;
+    margin-top: 30px;
+  }
+}
+
+.title {
+  position: absolute; /* Ensure the title is positioned over the image */
+  top: 50%; /* Move to the middle vertically */
+  left: 50%; /* Move to the middle horizontally */
+  transform: translate(-50%, -50%); /* Offset by half to center */
+  text-align: center; /* Center text horizontally */
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+  padding: 20px; /* Add padding around text */
+  border-radius: 10px; /* Round the corners */
+  display: inline-block; /* Adjust box size to content */
+}
+
+.container-fluid h1 {
+  text-align: center;
+  margin-top: -30px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 2.5rem; /* Mengatur ukuran font */
+  color: rgb(2, 1, 0); /* Warna teks */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Memberikan efek bayangan */
+}
+
+.container .benefit-extra a {
+  color: rgb(0, 0, 0);
+  width: 100px;
+}
+
+.benefit-extra a:hover {
+  color: rgb(255, 132, 0);
+}
+
+.benefit-extra h5 {
+  text-align: center;
+}
+
+.type h1 {
+  margin-top: -70px;  
+  margin-bottom: 1rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.type .office-item {
+  height: 100%;
+  transition: all 0.3s ease; 
+  background-color: white; 
+  border: 1px solid #ddd; 
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.fasilitas h1{
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 2.5rem;
+  color: rgb(2, 1, 0); /* Warna teks */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Memberikan efek bayangan */
+}
+
+.carousel-inner {
+  padding: 1em;
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 10px
+}
+
+.card-all {
+  margin: 0 15px;
+  max-height: 1000px; 
+  height: 250px; 
+  max-width: 1000px; 
+  width: 600px;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18); 
+  background-color: rgb(10, 3, 219);
+}
+
+.card-all .card-title{
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@media (max-width: 768px) {
+  .card-all {
+      width: 100%; /* Card memenuhi seluruh lebar layar pada tampilan kecil */
+      height: auto; /* Tinggi akan menyesuaikan konten */
+      margin-bottom: 20px; /* Tambahkan jarak vertikal antara card pada tampilan mobile */
+  }
+}
+
+.carousel-inner{
+  display: flex;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 6vh;
+  height: 6vh;
+  background-color: black;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-control-next:hover,
+.carousel-control-prev:hover{
+  background-color: #0c0000;
+}
+
+.type h1{
+  margin-top: 0.1rem;
+}
+
+.type .office-item:hover {
+  background-color: orange; 
+  color: white; 
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
+}
+
+.type .office-item .p-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.type .office-item p {
+  font-size: 13px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: inherit;
+}
+
+.type .office-item .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: inherit;
+}
+
+.type .description p{
+  margin-bottom: 0;
+}
+
+.type .office-item .btn {
+  margin-bottom: 0.3rem;
+  margin-left: 0.5rem;
+}
+
+.type .office-item .pesan-sekarang {
+  margin-top: 1rem;
+  background-color: blue; 
+  border-color: blue;
+  color: white;
+  width: 15rem;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out; 
+}
+
+.type .office-item .pesan-sekarang:hover {
+  background-color: white; 
+  border-color: black;
+  color: black; 
+  transform: scale(1.1);
+}
+
+.type .office-item .wa {
+  margin-top: 1rem;
+  background-color: white;
+  border-color: #0c0000; 
+  color: black; 
+  width: 15rem;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out; 
+}
+
+.type .office-item .wa:hover {
+  background-color: green;
+  border-color: green;
+  color: white; 
+  transform: scale(1.1); 
+}
+
+.category-title {
+  font-size: 1rem; 
+  font-weight: bold; 
+  margin-bottom: 20px; 
+  color: black; 
+  text-align: center; 
+}
+
+/* Memastikan teks dan ikon di dalam ul rata kiri */
+.benefit-item ul.fa-ul {
+  color: rgb(31, 31, 31);
+  padding-left: 0; /* Menghapus padding default pada ul */
+  list-style-type: none; /* Menghapus style default bullet point */
+  text-align: left; /* Teks rata kiri */
+}
+
+/* Mengatur li agar rata kiri */
+.benefit-item ul.fa-ul li {
+  margin-left: 0; /* Menghapus margin default pada li */
+  padding-left: 0; /* Menghapus padding default pada li */
+  text-align: left; /* Teks rata kiri */
+}
+
+.benefit-item ul.fa-ul .fa.fa-check-square{
+  color: green;
+}
+
+/* Memastikan card tetap rapi dan semua elemen rata kiri */
+.benefit-item {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start; /* Menyelaraskan item ke kiri */
+  height: 100%;
+}
+
+.p-4 {
+  width: 100%;
+  border: none;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers the icons and text */
+  text-align: center;
+  text-decoration: none;
+}
+
+.social-icons a i {
+  margin-right: 8px; /* Adds some space between the icon and the text */
+}
+
+footer .col-md-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer .col-md-4 h5,
+footer .col-md-4 p,
+.social-icons {
+  text-align: center;
+}

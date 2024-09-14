@@ -1381,8 +1381,7 @@ app.put('/updateComplaints', async (req, res, next) => {
 //Booking Rizki Rendy
 app.get('/booking', async (req, res, next) => {
     try {
-
-        const [booking] = await complaintsModel.getAllComplaints();
+        const [booking] = await BookingsModel.getAllBooking();
         res.status(201).json({
             status: 200,
             message: 'Berhasil Mengambil Semua Data Penyewaan',
@@ -1415,16 +1414,24 @@ app.post('/createBooking', async (req, res, next) => {
 
 app.delete('/deleteBooking', async (req, res, next) => {
     try {
-        const ID_User = req.body.id;
+        const ID_Pemesanan = req.body.id;
+        console.log(`Received ID for deletion: ${ID_Pemesanan}`);
+
+        // Pastikan ID_User tidak undefined
+        if (ID_Pemesanan === undefined || ID_Pemesanan === null) {
+            throw new Error('ID_Pemesanan tidak valid');
+        }
+
         await BookingsModel.deleteBooking(ID_User);
-        res.status(201).json({ 
+        res.status(200).json({ 
             status: 200,
             message: 'Berhasil Menghapus Data pesanan'
-         });
+        });
     } catch (error) {
         next(error); 
     }
 });
+
 
 app.put('/updateBooking', async (req, res, next) => {
     try {

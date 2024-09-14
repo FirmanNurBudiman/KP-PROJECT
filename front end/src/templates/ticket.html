@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Goling</title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="GOLING (Go Healing)" />
+    <meta name="keywords" content="goling team" />
+
+    <!-- Icon -->
+    <link rel="icon" href="./images/goling.ico" />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Symbols -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div id="navbarId" class="navbar">
+            <div class="headerInner">
+                <h1 class="headerTitle">
+                    Goling
+                </h1>
+                <ul class="navigationResponsive">
+                    <li>
+                        <button id="navigationDrawerId" class="navigationDrawer"
+                            aria-label="Open navigation drawer">☰</button>
+                    </li>
+                </ul>
+            </div>
+            <nav id="navbarContainerId" class="navbarContainer">
+                <nav id="navbarContainerId" class="navbarContainer">
+                    <ul class="navbarList">
+                      <li class="navbarItem"><a href="./index.html">Home</a></li>
+                      <li class="navbarItem"><a href="./index.html#destinations">Tentang Kami</a></li>
+                      <li class="navbarItem dropdown">
+                        <a href="./complaints.html" class="dropdown-toggle">Complaints</a>
+                        <ul class="dropdown-menu">
+                          <li><a href="./callcenter.html">Call Center</a></li>
+                          <li><a href="./contact-section.html">Contact</a></li>
+                        </ul>
+                      </li>
+                      <li class="navbarItem"><button id="myBooking">Booking</button></li>
+                    </ul>
+                  </nav>
+        </div>
+        <div class="hero">
+            <div class="heroContainer">
+                <h1 class="heroTitle">Explore all of Indonesia and enjoy its beauty</h1>
+                <p class="heroDescription">Find the tour you want here.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Payment -->
+    <div class="payment-container">
+        <div>
+            <h1>My Ticket</h1>
+        </div>
+        <div class="booking" id="booking-container">
+            <!-- <div class="ticket-card">
+                <div class="orang">
+                    <h1 id="ticket-title">Tiket ke Mandalika</h1>
+                    <p id="ticket-id">ID:1234</p>
+                </div>
+                <div class="ticket-qty">
+                    <div class="ticket-price">
+                        <h2><span id="ticket-price">Rp 170.000</span></h2>
+                    </div>
+                    <div class="ticket-price">
+                        <button onclick="printTicket(ticketId)">Cetak Tiket</button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- Wave on Footer -->
+    <section class="wave">
+        <div class="air air1"></div>
+        <div class="air air2"></div>
+        <div class="air air3"></div>
+        <div class="air air4"></div>
+      </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="foot">
+          <div class="footer-content">
+            <div class="footlinks">
+              <h4>Top Destination</h4>
+              <ul>
+                <li class="top">Denpasar, Bali</li>
+                <li class="top">Cimahi, Jawa Barat</li>
+                <li class="top">Bandung, Jawa Barat</li>
+                <li class="top">Medan, Sumatera</li>
+                <li class="top">Jakarta Selatan, Jakarta</li>
+              </ul>
+            </div>
+  
+            <div class="footlinks">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./index.html#destinations">Destination</a></li>
+                <li><a href="./index.html#contact">Contact</a></li>
+                <li><a href="./about.html">About Us</a></li>
+                <li><a href="https://forms.gle/Nzrm56hTmn1uAxLc9">Add Destination</a></li>
+              </ul>
+            </div>
+  
+            <div class="footlinks">
+              <h4>Contact</h4>
+              <ul>
+                <li class="contact-item">
+                  <a href="#" class="contact-link">Admin : +62 111-222-333</a>
+                </li>
+                <li class="contact-item">
+                  <a href="#" class="contact-link">Email : goling@gmail.com</a>
+                </li>
+                <li class="contact-item">
+                  <address>Bandung, Jawa Barat</address>
+                </li>
+              </ul>
+            </div>
+  
+            <div class="footlinks">
+              <h4>Social Media</h4>
+              <div class="social">
+                <a href="#" target="_blank"><i class="bx bxl-whatsapp"></i></a>
+                <a href="#" target="_blank"><i class="bx bxl-facebook"></i></a>
+                <a href="#" target="_blank"><i class="bx bxl-instagram"></i></a>
+                <a href="#" target="_blank"><i class="bx bxl-twitter"></i></a>
+                <a href="#" target="_blank"><i class="bx bxl-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="end">
+          <p>GOLING © 2024 All Rights Reserved</p>
+        </div>
+      </footer>
+    <div id="myModal" class="modal hidden">
+        <div class="modal-content">
+            <div id="bookingInfo">
+                <div class="modal-header">
+                    <h2>Ticket Information</h2>
+                    <span id="close">
+                        <?xml version="1.0" encoding="utf-8"?>
+                        <svg fill="#000000" width="28px" height="28px" viewBox="0 -0.01 512.023 512.023"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="_18_Close" data-name="18 Close" transform="translate(0.012 0.001)">
+                                <path id="Path_25" data-name="Path 25"
+                                    d="M74.966,437.013C-25,337.043-25,174.947,74.966,74.976c100-99.97,262.067-99.97,362.068,0,99.97,99.971,99.97,262.067,0,362.037C337.033,537,174.968,537,74.966,437.013ZM391.783,120.227c-75-74.985-196.565-74.985-271.535,0-75,74.985-75,196.55,0,271.535,74.97,74.986,196.534,74.986,271.535,0C466.754,316.776,466.754,195.212,391.783,120.227ZM188.124,369.137l-45.251-45.266,67.876-67.877-67.876-67.876,45.251-45.267L256,210.724l67.876-67.873,45.252,45.267-67.877,67.876,67.877,67.877L323.876,369.137,256,301.261ZM281.021,256,356.1,180.917,331.106,155.93,256,230.98,180.921,155.93l-25,25L230.99,256,155.919,331.08l25,25,75.06-75.074,75.074,75.074,25.005-25.011Z"
+                                    transform="translate(0 0)" />
+                            </g>
+                        </svg>
+                    </span>
+                </div>
+                <div class="modal-body">
+                    <div class="ticket-info">
+                        <h3>Destination: <span id="modal-destination"></span></h3>
+                        <p>Ticket ID: <span id="modal-ticket-id"></span></p>
+                        <p>Name: <span id="modal-name"></span></p>
+                        <p>Phone: <span id="modal-phone"></span></p>
+                        <p>Email: <span id="modal-email"></span></p>
+                        <p>Quantity: <span id="modal-qty"></span></p>
+                        <p>Total Price: <span id="modal-price"></span></p>
+                        <p>Date of Booking: <span id="modal-date"></span></p>
+                    </div>
+                    <button onclick="window.print()">Print</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var data = [];
+        var apiUrl = '';
+        if (window.location.hostname === 'localhost') {
+            apiUrl = 'http://localhost:8001';
+        } else {
+            apiUrl = 'https://api.goling.site';
+        }
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const transactionIds = await loadTransactionIdsFromIndexDb();
+
+                const response = await fetch(`${apiUrl}/ticket`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ order_ids: transactionIds }),
+                });
+
+                const tickets = await response.json();
+                data = tickets;
+                displayTickets(tickets);
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+
+        async function loadTransactionIdsFromIndexDb() {
+            return new Promise((resolve, reject) => {
+                var db;
+                var request = indexedDB.open('transactions_db', 1);
+
+                request.onerror = function (event) {
+                    reject('Database error: ' + event.target.errorCode);
+                };
+
+                request.onsuccess = function (event) {
+                    db = event.target.result;
+                    var transaction = db.transaction(['transactions'], 'readonly');
+                    var objectStore = transaction.objectStore('transactions');
+
+                    var keysRequest = objectStore.getAllKeys();
+
+                    keysRequest.onsuccess = function (event) {
+                        resolve(event.target.result);
+                    };
+
+                    keysRequest.onerror = function (event) {
+                        reject('Error fetching keys: ' + event.target.errorCode);
+                    };
+                };
+
+                request.onupgradeneeded = function (event) {
+                    db = event.target.result;
+                    db.createObjectStore('transactions', { keyPath: 'id' });
+                };
+            });
+        }
+
+        function displayTickets(tickets) {
+            const container = document.getElementById('booking-container');
+            tickets.forEach(ticket => {
+                const ticketCard = document.createElement('div');
+                ticketCard.className = 'ticket-card';
+                ticketCard.innerHTML = `
+                    <div class="orang">
+                        <h1 id="ticket-title">Tiket ke ${ticket.transaction.destination.name}</h1>
+                        <p id="ticket-id">Ticket ID: ${ticket.ticket_id}</p>
+                    </div>
+                    <div class="ticket-qty">
+                        <div class="ticket-price">
+                            <h2><span id="ticket-price">${new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(ticket.transaction.total_price)}</span></h2>
+                        </div>
+                        <div class="ticket-price">
+                            <button onclick="printTicket('${ticket.ticket_id}')">Cetak Tiket</button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(ticketCard);
+            });
+        }
+
+        function printTicket(ticketId) {
+            const ticket = data.find(ticket => ticket.ticket_id === ticketId);
+
+            document.getElementById('modal-destination').textContent = ticket.transaction.destination.name;
+            document.getElementById('modal-ticket-id').textContent = ticket.ticket_id;
+            document.getElementById('modal-name').textContent = ticket.transaction.name;
+            document.getElementById('modal-phone').textContent = ticket.transaction.phone;
+            document.getElementById('modal-email').textContent = ticket.transaction.email;
+            document.getElementById('modal-qty').textContent = ticket.transaction.ticket_qty;
+            document.getElementById('modal-price').textContent = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(ticket.transaction.total_price);
+            document.getElementById('modal-date').textContent = new Date(ticket.transaction.date_booking).toLocaleString('id-ID');
+
+            var modal = document.getElementById('myModal');
+            modal.style.display = "block";
+
+            var closeButton = document.getElementById('close');
+            closeButton.onclick = function () {
+                modal.style.display = "none";
+            };
+        }
+    </script>
+</body>
+
+</html>
